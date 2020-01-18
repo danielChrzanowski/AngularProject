@@ -1,6 +1,17 @@
-<nav>
-  <a routerLink="strona-pierwsza" routerLinkActive="active">strona pierwsza</a>
-  <a routerLink="strona-druga">strona druga</a>
-</nav>
+<h2>Tytul</h2>
 
-<router-outlet></router-outlet>
+  <ul class="nav nav-tabs">
+    <li class="nav-item" routerLinkActive='active'>
+      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['strona-pierwsza']">pierwsza</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['strona-druga']">druga</a>
+    </li>
+  </ul>
+
+  <router-outlet></router-outlet>
+
+  <hr>
+  <div class="opisStrony">
+    opis strony
+  </div>
