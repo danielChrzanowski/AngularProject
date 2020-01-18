@@ -1,17 +1,23 @@
-<h2>Tytul</h2>
+<head>
+  <script src="https://kit.fontawesome.com/a7c017e8a1.js" crossorigin="anonymous"></script>
+</head>
+<h1>Example heading</h1>
 
-  <ul class="nav nav-tabs">
-    <li class="nav-item" routerLinkActive='active'>
-      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['strona-pierwsza']">pierwsza</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['strona-druga']">druga</a>
-    </li>
-  </ul>
+<ul class="nav justify-content-center nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['main']">main<i class="fab fa-accusoft"></i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['strona-pierwsza']">pierwsza<i class="fab fa-adobe"></i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['strona-druga']">druga</a>
+  </li>
+</ul>
 
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 
-  <hr>
-  <div class="opisStrony">
-    opis strony
-  </div>
+<div class="opisStrony">
+  opis strony
+</div>
+
