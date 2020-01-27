@@ -8,7 +8,8 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
   { path: 'strona-pierwsza', component: StronaPierwszaComponent },
   { path: 'strona-druga', component: StronaDrugaComponent },
-  { path: 'main', component: MainComponent }
+  { path: 'main', component: MainComponent },
+  { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];
 
 @NgModule({
