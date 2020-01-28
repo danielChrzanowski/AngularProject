@@ -30,4 +30,3 @@ import { MyslKompComponent } from './mojegrzyby/components/mysl-komp/mysl-komp.c
 export class AppModule { }
 
 //gen komponent
-//ng g c new-component --module app

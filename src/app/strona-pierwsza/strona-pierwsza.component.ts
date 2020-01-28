@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-strona-pierwsza',
@@ -6,10 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./strona-pierwsza.component.scss']
 })
 export class StronaPierwszaComponent implements OnInit {
-
-  constructor() { }
-
+ 
   ngOnInit() {
   }
-
 }
