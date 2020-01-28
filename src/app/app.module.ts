@@ -5,18 +5,25 @@ import { RoutingModule, routingComponents } from './routing.module';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
+import { SerwisService } from './mojegrzyby/services/serwis.service';
+import { FormsModule } from '@angular/forms';
+import { MyslInputComponent } from './mojegrzyby/components/mysl-input/mysl-input.component';
+import { MyslKompComponent } from './mojegrzyby/components/mysl-komp/mysl-komp.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    MainComponent
+    MainComponent,
+    MyslInputComponent,
+    MyslKompComponent
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [SerwisService],
   bootstrap: [AppComponent]
 })
 
