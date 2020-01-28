@@ -9,6 +9,9 @@ import { SerwisService } from './mojegrzyby/services/serwis.service';
 import { FormsModule } from '@angular/forms';
 import { MyslInputComponent } from './mojegrzyby/components/mysl-input/mysl-input.component';
 import { MyslKompComponent } from './mojegrzyby/components/mysl-komp/mysl-komp.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { MyslKompComponent } from './mojegrzyby/components/mysl-komp/mysl-komp.c
   imports: [
     BrowserModule,
     RoutingModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [SerwisService],
   bootstrap: [AppComponent]

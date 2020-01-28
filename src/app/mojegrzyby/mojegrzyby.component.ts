@@ -6,13 +6,8 @@ import { SerwisService } from './services/serwis.service';
   templateUrl: './mojegrzyby.component.html',
   styleUrls: ['./mojegrzyby.component.scss']
 })
-export class MojegrzybyComponent implements OnInit {
-
-
+export class MojegrzybyComponent {
   constructor(private serwis: SerwisService) {
-  }
-
-  ngOnInit() {
   }
 
 }

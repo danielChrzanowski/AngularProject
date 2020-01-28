@@ -3,3 +3,23 @@
     padding-left: 200px;
     padding-right: 200px;
 }
+.mat-sort-header-container {
+    align-items: center;
+  }
+
+  .tabelka{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-bottom: 20px;
+  }
+
+  h3{
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .dol{
+    text-align: center;
+    padding: 10px;
+  }
