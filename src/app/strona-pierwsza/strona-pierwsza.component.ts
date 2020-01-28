@@ -3,7 +3,7 @@ import {Sort} from '@angular/material/sort';
 
 export interface Dessert {
   calories: number;
-  carbs: number;
+  carbs: string;
   fat: number;
   name: string;
   protein: number;
@@ -16,11 +16,11 @@ export interface Dessert {
 })
 export class StronaPierwszaComponent{
   desserts: Dessert[] = [
-    {name: 'Frozen yogurt', calories: 159, fat: 6, carbs: 24, protein: 4},
-    {name: 'Ice cream sandwich', calories: 237, fat: 9, carbs: 37, protein: 4},
-    {name: 'Eclair', calories: 262, fat: 16, carbs: 24, protein: 6},
-    {name: 'Cupcake', calories: 305, fat: 4, carbs: 67, protein: 4},
-    {name: 'Gingerbread', calories: 356, fat: 16, carbs: 49, protein: 4},
+    {name: 'Borowik szlachetny', calories: 25, fat: 20, carbs: 'biały', protein: 18},
+    {name: 'Koźlarz babka', calories: 20, fat: 2.5, carbs: 'białokremowy', protein: 20},
+    {name: 'Podgrzybek złotopory', calories: 10, fat: 8, carbs: 'żółty', protein: 14},
+    {name: 'Pieczarka zaroślowa', calories: 14, fat: 10, carbs: 'biały', protein: 7.5},
+    {name: 'Mleczaj smaczny', calories: 15, fat: 12, carbs: 'jasnożółty', protein: 9.5},
   ];
 
   sortedData: Dessert[];
