@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SerwisService } from 'src/app//mojegrzyby/services/serwis.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ModalService } from 'src/app/_modal';
 
 @Component({
   selector: 'app-mysl-input',
@@ -12,8 +13,9 @@ export class MyslInputComponent implements OnInit {
   submitted = false;
   public myslTekst: string;
   public dodane: string;
+  bodyText: string;
 
-  constructor(private serwis: SerwisService, private formBuilder: FormBuilder) {
+  constructor(private serwis: SerwisService, private formBuilder: FormBuilder, private modalService: ModalService) {
     this.myslTekst = '';
   }
 
@@ -22,6 +24,8 @@ export class MyslInputComponent implements OnInit {
       nazwa: ['', Validators.required],
       ilosc: ['', [Validators.required, Validators.min(1)]],
     });
+
+    this.bodyText = ""+this.myslTekst;
   }
 
   get f() { return this.registerForm.controls; }
@@ -51,6 +55,14 @@ export class MyslInputComponent implements OnInit {
       ilosc: ''
     });
 
+  }
+
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
   }
 
 }
