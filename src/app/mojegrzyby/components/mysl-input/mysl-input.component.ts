@@ -23,7 +23,7 @@ export class MyslInputComponent implements OnInit {
       this.myslTekst = '';
       this.alert = '';
     } else {
-      this.alert = 'Myśl powinna zawierać od 1 do 58 znaków!';
+      this.alert = 'Za dużo znaków!';
     }
   }
 

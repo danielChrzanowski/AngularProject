@@ -20,7 +20,7 @@ export class SerwisService {
   }
 
   public addMysl(tekst: string): boolean {
-    if (tekst.length < 59 && tekst.length > 0) {
+    if (tekst.length < 100 && tekst.length > 0) {
       let mysl = new Mysl(this.nextID, tekst);
       let mysli = this.getMysli();
       mysli.push(mysl);
