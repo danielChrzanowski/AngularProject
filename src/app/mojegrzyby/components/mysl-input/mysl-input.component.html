@@ -5,38 +5,35 @@
   </ol>
 </nav>
 
-
-
-
-
-<div class="jumbotron">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <h3>Dodaj zebrane grzyby</h3>
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label>Nazwa</label>
-            <input type="text" formControlName="nazwa" class="form-control"
-              [ngClass]="{ 'is-invalid': submitted && f.nazwa.errors }" />
-            <div *ngIf="submitted && f.nazwa.errors" class="invalid-feedback">
-              <div *ngIf="f.nazwa.errors.required">Nazwa nie może być pusta</div>
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h3>Dodaj zebrane grzyby</h3>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label>Nazwa</label>
+              <input type="text" formControlName="nazwa" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.nazwa.errors }" />
+              <div *ngIf="submitted && f.nazwa.errors" class="invalid-feedback">
+                <div *ngIf="f.nazwa.errors.required">Nazwa nie może być pusta</div>
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label>Ilość</label>
-            <input type="text" formControlName="ilosc" class="form-control"
-              [ngClass]="{ 'is-invalid': submitted && f.ilosc.errors }" />
-            <div *ngIf="submitted && f.ilosc.errors" class="invalid-feedback">
-              <div *ngIf="f.ilosc.errors.required">Ilość nie może byc pusta</div>
-              <div *ngIf="registerForm.controls['ilosc'].hasError('min')">Minimum 1 grzyb</div>
+            <div class="form-group">
+              <label>Ilość</label>
+              <input type="text" formControlName="ilosc" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.ilosc.errors }" />
+              <div *ngIf="submitted && f.ilosc.errors" class="invalid-feedback">
+                <div *ngIf="f.ilosc.errors.required">Ilość nie może byc pusta</div>
+                <div *ngIf="registerForm.controls['ilosc'].hasError('min')">Minimum 1 grzyb</div>
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary" (click)="addMysl()">Dodaj</button>
-          </div>
-        </form>
+            <div class="form-group">
+              <a class="btn btn-primary" href="mojegrzyby" role="button">Cofnij</a>
+              <button class="btn btn-primary" (click)="addMysl()">Dodaj</button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </div><div class="ostatniododany">Ostatnio dodany:<br> {{dodane}}</div>
   </div>
-</div>
