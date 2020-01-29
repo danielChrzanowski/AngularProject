@@ -20,7 +20,6 @@ const EXAMPLE_DATA: DataTableItem[] = [
   { id: 6, nazwa: 'Maślak żółty', kapelusz: '4 - 15', wielkosc: 14 },
   { id: 7, nazwa: 'Piaskowiec modrzak', kapelusz: '3.5 - 12', wielkosc: 10 },
   { id: 8, nazwa: 'Bocznik ostrygowaty', kapelusz: '5 - 25', wielkosc: 4 },
-
 ];
 
 export class DataSource2 extends DataSource<DataTableItem>{
@@ -31,7 +30,7 @@ export class DataSource2 extends DataSource<DataTableItem>{
   }
 
   connect(): Observable<DataTableItem[]> {
-    const dataChange = [
+    const zmianaDanych = [
       observableOf(this.data),
       this.paginator.page,
       this.sort.sortChange
@@ -39,7 +38,7 @@ export class DataSource2 extends DataSource<DataTableItem>{
 
     this.paginator.length = this.data.length;
 
-    return merge(...dataChange).pipe(map(() => {
+    return merge(...zmianaDanych).pipe(map(() => {
       return this.getPagedData(this.getSortedData([...this.data]));
     }));
   }
@@ -59,10 +58,10 @@ export class DataSource2 extends DataSource<DataTableItem>{
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'nazwa': return compare(a.nazwa, b.nazwa, isAsc);
-        case 'kapelusz': return compare(a.nazwa, b.nazwa, isAsc);
-        case 'wielkosc': return compare(+a.wielkosc, +b.wielkosc, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'nazwa': return porownaj(a.nazwa, b.nazwa, isAsc);
+        case 'kapelusz': return porownaj(a.nazwa, b.nazwa, isAsc);
+        case 'wielkosc': return porownaj(+a.wielkosc, +b.wielkosc, isAsc);
+        case 'id': return porownaj(+a.id, +b.id, isAsc);
         default: return 0;
       }
     });
@@ -70,6 +69,6 @@ export class DataSource2 extends DataSource<DataTableItem>{
 
 }
 
-function compare(a, b, isAsc) {
+function porownaj(a, b, isAsc) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

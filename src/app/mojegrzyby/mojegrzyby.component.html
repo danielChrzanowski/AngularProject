@@ -1,14 +1,13 @@
 <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="mojegrzyby">Moje grzyby</a></li>
-    </ol>
-  </nav>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="mojegrzyby">Moje grzyby</a></li>
+  </ol>
+</nav>
 
-
-    <div class="box">
-      <h2>Moje grzyby:</h2>
-      <div *ngFor="let mysl of serwis.getMysli()">
-        <app-mysl-komp [mysl]="mysl"></app-mysl-komp>
-      </div>
-      <app-mysl-input></app-mysl-input>
-    </div>
+<div class="box">
+  <h2>Moje grzyby:</h2>
+  <div *ngFor="let mysl of serwis.getMysli()">
+    <app-mysl-komp [mysl]="mysl"></app-mysl-komp>
+  </div>
+  <app-mysl-input></app-mysl-input>
+</div>

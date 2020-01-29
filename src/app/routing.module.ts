@@ -25,4 +25,4 @@ const routes: Routes = [
 
 export class RoutingModule { }
 
-export const routingComponents=[StronaPierwszaComponent, StronaDrugaComponent, MainComponent, MojegrzybyComponent]
+export const routingComponents = [StronaPierwszaComponent, StronaDrugaComponent, MainComponent, MojegrzybyComponent]
