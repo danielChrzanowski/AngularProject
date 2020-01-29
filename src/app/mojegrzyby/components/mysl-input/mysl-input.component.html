@@ -30,16 +30,16 @@
             </div>
             <div class="form-group">
               <a class="btn btn-primary" href="mojegrzyby" role="button">Cofnij</a>
-              <button class="btn btn-primary" (click)="addMysl(); openModal('custom-modal-1')">Dodaj</button>
+              <button class="btn btn-primary" (click)="openModal('custom-modal-1')">Dodaj</button>
             </div>
           </form>
         </div>
       </div>
-    </div><div class="ostatniododany">Ostatnio dodany:<br> {{dodane}}</div>
+    </div>
   </div>
     
   <jw-modal id="custom-modal-1">
-    <h2>Dodano grzyb:</h2>
+    <h2>Dodano grzyb</h2>
     <p>{{dodane}}</p>
     <button class="btn btn-primary" (click)="closeModal('custom-modal-1');">Zamknij</button>
   </jw-modal>

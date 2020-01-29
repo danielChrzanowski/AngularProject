@@ -25,7 +25,7 @@ export class MyslInputComponent implements OnInit {
       ilosc: ['', [Validators.required, Validators.min(1)]],
     });
 
-    this.bodyText = ""+this.myslTekst;
+    this.bodyText = "" + this.myslTekst;
   }
 
   get f() { return this.registerForm.controls; }
@@ -50,6 +50,8 @@ export class MyslInputComponent implements OnInit {
     }
 
     //wszystko ok
+    this.submitted = false;
+    this.addMysl();
     this.registerForm.patchValue({
       nazwa: '',
       ilosc: ''
@@ -58,7 +60,8 @@ export class MyslInputComponent implements OnInit {
   }
 
   openModal(id: string) {
-    this.modalService.open(id);
+    if (this.registerForm.valid)
+      this.modalService.open(id);
   }
 
   closeModal(id: string) {
