@@ -7,14 +7,6 @@
     align-items: center;
   }
 
-  .tabelka{
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    margin-bottom: 20px;
-    width: 800px;
-  }
-
   h3{
     text-align: center;
     padding-bottom: 20px;
@@ -26,3 +18,10 @@
   }
 
   @import "~@angular/material/prebuilt-themes/indigo-pink.css"; 
+
+  .data-table {
+    width: 40%;
+    margin: 20px auto;
+  }
+
+ 

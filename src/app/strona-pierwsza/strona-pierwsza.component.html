@@ -6,24 +6,40 @@
 
 <h3>Informacje na temat grzybów w Polsce:</h3>
 
-<table class="tabelka" matSort (matSortChange)="sortData($event)">
-  <tr>
-    <th mat-sort-header="name">Nazwa:</th>
-    <th mat-sort-header="calories">Kapelusz (cm):</th>
-    <th mat-sort-header="fat">Trzon (cm):</th>
-    <th mat-sort-header="carbs">Miąższ:</th>
-    <th mat-sort-header="protein">Zarodniki (µm):</th>
-  </tr>
+<div class="mat-elevation-z8 data-table">
+  <mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
 
-  <tr *ngFor="let dessert of sortedData">
-    <td>{{dessert.name}}</td>
-    <td>{{dessert.calories}}</td>
-    <td>{{dessert.fat}}</td>
-    <td>{{dessert.carbs}}</td>
-    <td>{{dessert.protein}}</td>
-  </tr>
-</table>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="kapelusz">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Kapelusz</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.kapelusz}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="amount">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Amount</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.amount}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator #paginator
+    [length]="dataSource.data.length"
+    [pageIndex]="0"
+    [pageSize]="5">
+  </mat-paginator>
+</div>
 
 <div class="dol">
-(Można sortować tabelkę)
+
 </div>
