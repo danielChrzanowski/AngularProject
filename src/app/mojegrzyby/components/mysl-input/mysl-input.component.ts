@@ -11,7 +11,7 @@ export class MyslInputComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   public myslTekst: string;
-  public dodane: string = "";
+  public dodane: string;
 
   constructor(private serwis: SerwisService, private formBuilder: FormBuilder) {
     this.myslTekst = '';
@@ -34,7 +34,6 @@ export class MyslInputComponent implements OnInit {
     if (this.serwis.addMysl(this.myslTekst)) {
       this.dodane = this.myslTekst;
       this.myslTekst = '';
-
     }
   }
 

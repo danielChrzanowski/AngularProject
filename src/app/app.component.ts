@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -10,8 +11,10 @@ export class AppComponent {
   title = 'AngularProject';
   zaznaczony: string="";
 
-  constructor(){
-
+  constructor(public translate: TranslateService){
+    translate.setDefaultLang('pl');
   }
-
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 }

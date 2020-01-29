@@ -1,28 +1,34 @@
 <head>
   <script src="https://kit.fontawesome.com/a7c017e8a1.js" crossorigin="anonymous"></script>
 </head>
-<h1>Grzyby Polskie</h1>
+<h1 translate>Title</h1>
 
 <ul class="nav justify-content-center nav-pills">
   <li class="nav-item">
-    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['main']">Home <i class="fas fa-home"></i></a>
+    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['main']" translate>Home<i class="fas fa-home"></i></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['mojegrzyby']">Moje grzyby <i
+    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['mojegrzyby']" translate>Moje grzyby<i
         class="fas fa-shopping-basket"></i></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['strona-pierwsza']">Informacje <i
+    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['strona-pierwsza']" translate>Informacje<i
         class="fas fa-info-circle"></i></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['strona-druga']">druga</a>
+    <a class="nav-link" [routerLinkActive]="['active']" [routerLink]="['strona-druga']" translate>druga</a>
   </li>
 </ul>
 
 <router-outlet></router-outlet>
 
 <div class="stopka">
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary" (click)="switchLanguage('pl')">pl</button>
+    <button type="button" class="btn btn-primary" (click)="switchLanguage('en')">en</button>
+    <button type="button" class="btn btn-primary" (click)="switchLanguage('fr')">fr</button>
+  </div>
+  <br>
   Created by: Daniel Ch.<br>
   v1.2020
   <br><br>
