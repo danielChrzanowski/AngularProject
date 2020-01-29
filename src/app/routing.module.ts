@@ -5,12 +5,14 @@ import { StronaPierwszaComponent } from './strona-pierwsza/strona-pierwsza.compo
 import { StronaDrugaComponent } from './strona-druga/strona-druga.component';
 import { MainComponent } from './main/main.component';
 import { MojegrzybyComponent } from './mojegrzyby/mojegrzyby.component';
+import { MyslInputComponent } from './mojegrzyby/components/mysl-input/mysl-input.component';
 
 const routes: Routes = [
   { path: 'strona-pierwsza', component: StronaPierwszaComponent },
   { path: 'strona-druga', component: StronaDrugaComponent },
   { path: 'main', component: MainComponent },
   { path: 'mojegrzyby', component: MojegrzybyComponent },
+  { path: 'dodaj-grzyb', component: MyslInputComponent },
   { path: '', redirectTo: 'main', pathMatch: 'full' }
 ];
 
@@ -25,4 +27,4 @@ const routes: Routes = [
 
 export class RoutingModule { }
 
-export const routingComponents = [StronaPierwszaComponent, StronaDrugaComponent, MainComponent, MojegrzybyComponent]
+export const routingComponents = [StronaPierwszaComponent, StronaDrugaComponent, MainComponent, MojegrzybyComponent, MyslInputComponent]
