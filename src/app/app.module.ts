@@ -12,6 +12,7 @@ import { MyslKompComponent } from './mojegrzyby/components/mysl-komp/mysl-komp.c
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     FormsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    BrowserAnimationsModule
   ],
   providers: [SerwisService],
   bootstrap: [AppComponent]
@@ -35,4 +37,3 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 export class AppModule { }
 
-//gen komponent
