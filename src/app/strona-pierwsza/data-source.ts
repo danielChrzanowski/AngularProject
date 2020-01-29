@@ -5,21 +5,21 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
 export interface DataTableItem {
-  name: string;
+  nazwa: string;
   kapelusz: string;
   id: number;
-  amount: number;
+  wielkosc: number;
 }
 
 const EXAMPLE_DATA: DataTableItem[] = [
-  { id: 1, name: 'Hydrogen', kapelusz: 'asd', amount: 10 },
-  { id: 2, name: 'Hydrogen', kapelusz: 'asd', amount: 10 },
-  { id: 3, name: 'Hydrogen', kapelusz: 'asd', amount: 10 },
-  { id: 4, name: 'Hydrogen', kapelusz: 'asd', amount: 10 },
-  { id: 5, name: 'Hydrogen', kapelusz: 'asd', amount: 10 },
-  { id: 6, name: 'Hydrogen', kapelusz: 'asd', amount: 10 },
-  { id: 7, name: 'Hydrogen', kapelusz: 'asd', amount: 10 },
-  { id: 8, name: 'Hydrogen', kapelusz: 'asd', amount: 10 },
+  { id: 1, nazwa: 'Borowik zwyczajny', kapelusz: '25', wielkosc: 20 },
+  { id: 2, nazwa: 'Koźlarz babka', kapelusz: '6 - 25', wielkosc: 17 },
+  { id: 3, nazwa: 'Podgrzybek złotopory', kapelusz: '3 - 10', wielkosc: 8 },
+  { id: 4, nazwa: 'Mleczaj smaczny', kapelusz: '5 - 15', wielkosc: 12 },
+  { id: 5, nazwa: 'Pieczarka bulwiasta', kapelusz: '6 - 14', wielkosc: 10 },
+  { id: 6, nazwa: 'Maślak żółty', kapelusz: '4 - 15', wielkosc: 14 },
+  { id: 7, nazwa: 'Piaskowiec modrzak', kapelusz: '3.5 - 12', wielkosc: 10 },
+  { id: 8, nazwa: 'Bocznik ostrygowaty', kapelusz: '5 - 25', wielkosc: 4 },
 
 ];
 
@@ -59,9 +59,9 @@ export class DataSource2 extends DataSource<DataTableItem>{
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'kapelusz': return compare(a.name, b.name, isAsc);
-        case 'amount': return compare(+a.amount, +b.amount, isAsc);
+        case 'nazwa': return compare(a.nazwa, b.nazwa, isAsc);
+        case 'kapelusz': return compare(a.nazwa, b.nazwa, isAsc);
+        case 'wielkosc': return compare(+a.wielkosc, +b.wielkosc, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }

@@ -11,7 +11,7 @@ export class StronaPierwszaComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   dataSource: DataSource2;
 
-  displayedColumns = ['id', 'name', 'kapelusz','amount'];
+  displayedColumns = ['id', 'nazwa', 'kapelusz','wielkosc'];
 
   ngOnInit() {
     this.dataSource = new DataSource2(this.paginator, this.sort);
