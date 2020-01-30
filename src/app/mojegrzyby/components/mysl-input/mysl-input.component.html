@@ -21,11 +21,13 @@
             </div>
             <div class="form-group">
               <label>Ilość</label>
-              <input type="text" formControlName="ilosc" class="form-control"
+              <input type="text" formControlName="ilosc" class="form-control" (keypress)="onKeyPress($event)"
                 [ngClass]="{ 'is-invalid': submitted && f.ilosc.errors }" />
               <div *ngIf="submitted && f.ilosc.errors" class="invalid-feedback">
                 <div *ngIf="f.ilosc.errors.required">Ilość nie może byc pusta</div>
                 <div *ngIf="registerForm.controls['ilosc'].hasError('min')">Minimum 1 grzyb</div>
+                <div [hidden]="!ilosc.errors.max">Maksymalnie 99 grzybów</div>
+                {{alert}}
               </div>
             </div>
             <div class="form-group">

@@ -21,8 +21,8 @@ export class MyslInputComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      nazwa: ['', Validators.required],
-      ilosc: ['', [Validators.required, Validators.min(1)]],
+      nazwa: ['', [Validators.required]],
+      ilosc: ['', [Validators.required, Validators.min(1), Validators.max(99)]],
     });
 
     this.bodyText = "" + this.myslTekst;
@@ -39,6 +39,17 @@ export class MyslInputComponent implements OnInit {
       this.dodane = this.myslTekst;
       this.myslTekst = '';
     }
+  }
+
+  onKeyPress(event: KeyboardEvent) {
+    if (event.key !== "0" && event.key !== "1"
+      && event.key !== "2" && event.key !== "3"
+      && event.key !== "4" && event.key !== "5"
+      && event.key !== "6" && event.key !== "7"
+      && event.key !== "8" && event.key !== "9") {
+      event.preventDefault();
+    }
+
   }
 
   onSubmit() {
