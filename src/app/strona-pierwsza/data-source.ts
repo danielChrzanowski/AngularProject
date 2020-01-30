@@ -12,7 +12,7 @@ export interface DataTableItem {
 }
 
 const EXAMPLE_DATA: DataTableItem[] = [
-  { id: 1, nazwa: 'Borowik zwyczajny', kapelusz: '25', wielkosc: 20 },
+  { id: 1, nazwa: 'Borowik szlachetny', kapelusz: '6 - 20', wielkosc: 20 },
   { id: 2, nazwa: 'Koźlarz babka', kapelusz: '6 - 25', wielkosc: 17 },
   { id: 3, nazwa: 'Podgrzybek złotopory', kapelusz: '3 - 10', wielkosc: 8 },
   { id: 4, nazwa: 'Mleczaj smaczny', kapelusz: '5 - 15', wielkosc: 12 },
