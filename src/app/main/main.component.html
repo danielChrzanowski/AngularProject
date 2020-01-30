@@ -4,12 +4,19 @@
   </ol>
 </nav>
 
-<div class="card">
-  <div class="card-body">
-    <h3>O czym?</h3>
-    To strona, na której możesz zapisywać zebrane grzyby
-    <br><br>
-    <H3>Ten rok:</H3>
-    <img src="assets/img/wystepowanie.png">
+<div class="pierwsza">
+  <h3>O czym?</h3>
+  <img class="grzyb" src="assets/img/grzyb.jpg"><br>
+  <br>
+  To strona, na której znajdziesz informacje o rzybach występujących w Polsce<br>
+  Możesz też zapisywać zebrane przez Ciebie grzyby grzyby
+
+<hr>
+  <h3>Porównanie wielkości kapeluszy grzybów:</h3>
+
+  <div class="wykres" style="display: block">
+    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+      [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+    </canvas>
   </div>
 </div>
