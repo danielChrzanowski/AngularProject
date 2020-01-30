@@ -23,23 +23,27 @@ const EXAMPLE_DATA: DataTableItem[] = [
 ];
 
 export class DataSource2 extends DataSource<DataTableItem>{
-  data: DataTableItem[] = EXAMPLE_DATA;
+  dana: DataTableItem[] = EXAMPLE_DATA;
 
   constructor(private paginator: MatPaginator, private sort: MatSort) {
     super();
   }
 
+  //lacze sie z tabelka i aktualizuje wszystko za jednym razem
+  //przy zmianie zawartosci - zmiana strony lub sortowanie
   connect(): Observable<DataTableItem[]> {
     const zmianaDanych = [
-      observableOf(this.data),
+      observableOf(this.dana),
       this.paginator.page,
       this.sort.sortChange
     ];
 
-    this.paginator.length = this.data.length;
+    this.paginator.length = this.dana.length;
 
+    //zwracam polaczone dane ze 'zmianaDanych' w jedno Observable
+    //i zmienione przez paginator i sortowanie
     return merge(...zmianaDanych).pipe(map(() => {
-      return this.getPagedData(this.getSortedData([...this.data]));
+      return this.getPagedData(this.getSortedData([...this.dana]));
     }));
   }
 
@@ -56,12 +60,12 @@ export class DataSource2 extends DataSource<DataTableItem>{
     }
 
     return data.sort((a, b) => {
-      const isAsc = this.sort.direction === 'asc';
+      const rosnaco = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'nazwa': return porownaj(a.nazwa, b.nazwa, isAsc);
-        case 'kapelusz': return porownaj(a.nazwa, b.nazwa, isAsc);
-        case 'wielkosc': return porownaj(+a.wielkosc, +b.wielkosc, isAsc);
-        case 'id': return porownaj(+a.id, +b.id, isAsc);
+        case 'nazwa': return porownaj(a.nazwa, b.nazwa, rosnaco);
+        case 'kapelusz': return porownaj(a.nazwa, b.nazwa, rosnaco);
+        case 'wielkosc': return porownaj(+a.wielkosc, +b.wielkosc, rosnaco);
+        case 'id': return porownaj(+a.id, +b.id, rosnaco);
         default: return 0;
       }
     });
