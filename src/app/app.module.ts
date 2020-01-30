@@ -15,8 +15,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ModalModule } from './_modal';
+import { ChartsModule } from 'ng2-charts';
 
-export function HttpLoaderFactory(http: HttpClient){
+export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
 
@@ -39,13 +40,14 @@ export function HttpLoaderFactory(http: HttpClient){
     ReactiveFormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
-      loader:{
+      loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
     }),
-    ModalModule
+    ModalModule,
+    ChartsModule
   ],
   providers: [SerwisService],
   bootstrap: [AppComponent]
