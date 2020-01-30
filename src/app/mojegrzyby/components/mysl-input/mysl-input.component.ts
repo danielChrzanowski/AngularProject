@@ -55,7 +55,7 @@ export class MyslInputComponent implements OnInit {
   OnInput(event: any) {
     this.tempNazwa = event.target.value;
     console.log(this.tempNazwa);
-    if (this.tempNazwa.length > 19) {
+    if (this.tempNazwa.length > 30) {
       event.preventDefault();
     }
   }
