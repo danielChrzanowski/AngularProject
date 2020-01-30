@@ -13,7 +13,7 @@
           <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label>Nazwa</label>
-              <input type="text" formControlName="nazwa" class="form-control"
+              <input type="text" formControlName="nazwa" class="form-control" (keypress)="OnInput($event)"
                 [ngClass]="{ 'is-invalid': submitted && f.nazwa.errors }" />
               <div *ngIf="submitted && f.nazwa.errors" class="invalid-feedback">
                 <div *ngIf="f.nazwa.errors.required">Nazwa nie może być pusta</div>

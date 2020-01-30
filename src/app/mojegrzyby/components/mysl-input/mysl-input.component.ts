@@ -14,6 +14,7 @@ export class MyslInputComponent implements OnInit {
   public myslTekst: string;
   public dodane: string;
   bodyText: string;
+  tempNazwa: string;
 
   constructor(private serwis: SerwisService, private formBuilder: FormBuilder, private modalService: ModalService) {
     this.myslTekst = '';
@@ -49,7 +50,14 @@ export class MyslInputComponent implements OnInit {
       && event.key !== "8" && event.key !== "9") {
       event.preventDefault();
     }
+  }
 
+  OnInput(event: any) {
+    this.tempNazwa = event.target.value;
+    console.log(this.tempNazwa);
+    if (this.tempNazwa.length > 19) {
+      event.preventDefault();
+    }
   }
 
   onSubmit() {
