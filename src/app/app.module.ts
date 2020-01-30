@@ -16,6 +16,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ModalModule } from './_modal';
 import { ChartsModule } from 'ng2-charts';
+import { ApixuService } from './strona-druga/apixu.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -49,7 +50,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ModalModule,
     ChartsModule
   ],
-  providers: [SerwisService],
+  providers: [SerwisService, ApixuService],
   bootstrap: [AppComponent]
 })
 

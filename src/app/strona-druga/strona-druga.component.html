@@ -5,7 +5,46 @@
 </nav>
 
 <div class="card">
-    <div class="card-body">
-      strona druga
+  <div class="card-body">
+    strona druga
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="text-center my-4">Search for Weather:</h3>
+      <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
+        <div class="form-group">
+          <input class="form-control" type="text" id="weatherLocation" aria-describedby="weatherLocation"
+            placeholder="Please input a Location" formControlName="location" />
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-success btn-md">
+            Search for the weather
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h3 class="text-center my-4">Weather Details:</h3>
+      <p class="text-center">
+        Miasto: {{ this.weatherData?.location.name}}
+      </p>
+      <p class="text-center">
+        Temperatura: {{ this.weatherData?.current.temperature }}°C
+      </p>
+      <p class="text-center">
+        Wilgotność: {{ this.weatherData?.current.humidity }}%
+      </p>
+      <p class="text-center">
+        Zachmurzenie: {{ this.weatherData?.current.cloudcover }}%
+      </p>
+      <p class="text-center">
+        Prędkość wiatru: {{ this.weatherData?.current.wind_speed }}km/h
+      </p>
+      <p class="text-center">
+        Widoczność: {{ this.weatherData?.current.visibility }}km
+      </p>
     </div>
   </div>
+</div>
