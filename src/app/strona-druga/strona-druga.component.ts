@@ -10,7 +10,7 @@ import { ApixuService } from './apixu.service';
 export class StronaDrugaComponent implements OnInit {
   public weatherSearchForm: FormGroup;
   public weatherData: any;
-  arrBirds: any = [];
+  blad: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,9 +26,16 @@ export class StronaDrugaComponent implements OnInit {
   sendToAPIXU(formValues) {
     this.apixuService.getWeather(formValues.location).subscribe(data => {
       this.weatherData = data;
-      console.log(this.weatherData);
+      if (this.weatherData.success == false) {
+        this.blad = "(Nie ma takiej lokacji w bazie pogody)";
+      } else {
+        this.blad = "";
+        console.log(this.weatherData);
+      }
     });
   }
+
+
 }
 
 
