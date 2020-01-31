@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SerwisService } from 'src/app//mojegrzyby/services/serwis.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalService } from 'src/app/_modal';
+import { FileHandle } from './dragDrop.directive';
 
 @Component({
   selector: 'app-mysl-input',
@@ -85,6 +86,17 @@ export class MyslInputComponent implements OnInit {
 
   closeModal(id: string) {
     this.modalService.close(id);
+  }
+
+  files: FileHandle[] = [];
+
+  filesDropped(files: FileHandle[]): void {
+    this.files = files;
+  }
+
+  upload(files: FileHandle[]): void {
+    this.files=null;
+
   }
 
 }

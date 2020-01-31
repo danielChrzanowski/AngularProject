@@ -18,6 +18,7 @@ import { ModalModule } from './_modal';
 import { ChartsModule } from 'ng2-charts';
 import { ApixuService } from './strona-druga/apixu.service';
 import { DyrektywaDirective } from './strona-druga/dyrektywa.directive';
+import { DragDirective } from './mojegrzyby/components/mysl-input/dragDrop.directive';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -30,7 +31,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MainComponent,
     MyslInputComponent,
     MyslKompComponent,
-    DyrektywaDirective
+    DyrektywaDirective,
+    DragDirective
   ],
   imports: [
     BrowserModule,

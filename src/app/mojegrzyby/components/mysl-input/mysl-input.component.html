@@ -5,44 +5,59 @@
   </ol>
 </nav>
 
-  <div class="jumbotron">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
-          <h3>Dodaj zebrane grzyby</h3>
-          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-              <label>Nazwa</label>
-              <input type="text" formControlName="nazwa" class="form-control" (keypress)="OnInput($event)"
-                [ngClass]="{ 'is-invalid': submitted && f.nazwa.errors }" />
-              <div *ngIf="submitted && f.nazwa.errors" class="invalid-feedback">
-                <div *ngIf="f.nazwa.errors.required">Nazwa nie może być pusta</div>
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h3>Dodaj zebrane grzyby</h3>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label>Nazwa</label>
+            <input type="text" formControlName="nazwa" class="form-control" (keypress)="OnInput($event)"
+              [ngClass]="{ 'is-invalid': submitted && f.nazwa.errors }" />
+            <div *ngIf="submitted && f.nazwa.errors" class="invalid-feedback">
+              <div *ngIf="f.nazwa.errors.required">Nazwa nie może być pusta</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Ilość</label>
+            <input type="text" formControlName="ilosc" class="form-control" (keypress)="onKeyPress($event)"
+              [ngClass]="{ 'is-invalid': submitted && f.ilosc.errors }" />
+            <div *ngIf="submitted && f.ilosc.errors" class="invalid-feedback">
+              <div *ngIf="f.ilosc.errors.required">Ilość nie może byc pusta</div>
+              <div *ngIf="registerForm.controls['ilosc'].hasError('min')">Minimum 1 grzyb</div>
+              <div [hidden]="!ilosc.errors.max">Maksymalnie 99 grzybów</div>
+              {{alert}}
+            </div>
+          </div>
+
+          <div class="dragDrop">
+            <div *ngIf="!files.length" class="col-12 rmpm dropzone" appDrag (files)="filesDropped($event)">
+              <div class="text-wrapper">
+                <div class="centered">Przeciągnij zdjęcie tutaj</div>
               </div>
             </div>
-            <div class="form-group">
-              <label>Ilość</label>
-              <input type="text" formControlName="ilosc" class="form-control" (keypress)="onKeyPress($event)"
-                [ngClass]="{ 'is-invalid': submitted && f.ilosc.errors }" />
-              <div *ngIf="submitted && f.ilosc.errors" class="invalid-feedback">
-                <div *ngIf="f.ilosc.errors.required">Ilość nie może byc pusta</div>
-                <div *ngIf="registerForm.controls['ilosc'].hasError('min')">Minimum 1 grzyb</div>
-                <div [hidden]="!ilosc.errors.max">Maksymalnie 99 grzybów</div>
-                {{alert}}
-              </div>
+            <br>
+            <!--droped image preview-->
+            <div *ngFor="let file of files">
+              <img *ngIf="file" [src]="file.url" width="300px" height="200px">
             </div>
+          </div>
+          <button class="btn btn-primary" type="button" (click)="upload($event)">Skasuj zdjęcie</button>
+          <div class="przyciski">
             <div class="form-group">
               <a class="btn btn-primary" href="mojegrzyby" role="button">Cofnij</a>
               <button class="btn btn-primary" (click)="openModal('custom-modal-1')">Dodaj</button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-    
-  <jw-modal id="custom-modal-1">
-    <h2>Dodano grzyb</h2>
-    <p>{{dodane}}</p>
-    <button class="btn btn-primary" (click)="closeModal('custom-modal-1');">Zamknij</button>
-  </jw-modal>
-  
+</div>
+
+<jw-modal id="custom-modal-1">
+  <h2>Dodano grzyb</h2>
+
+  <button class="btn btn-primary" (click)="closeModal('custom-modal-1');">Zamknij</button>
+</jw-modal>
