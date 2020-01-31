@@ -95,7 +95,7 @@ export class MyslInputComponent implements OnInit {
   }
 
   upload(files: FileHandle[]): void {
-    this.files=null;
+    this.files=[];
 
   }
 
