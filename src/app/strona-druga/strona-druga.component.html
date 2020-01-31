@@ -48,8 +48,12 @@
       <div class="center">
         <div *ngIf="czyPuste==0">
           <div *ngIf="czyGrzybowac==1; then thenBlock else elseBlock"></div>
-          <ng-template #thenBlock>Idealne warunki na grzybobranie :)</ng-template>
-          <ng-template #elseBlock> Lepiej nie wychodzić z domu :(</ng-template>
+          <ng-template #thenBlock>
+            <div class="tak">Idealne warunki na grzybobranie :)</div>
+          </ng-template>
+          <ng-template #elseBlock>
+            <div class="nie">Lepiej nie wychodzić z domu :(</div>
+          </ng-template>
         </div>
       </div>
     </div>
