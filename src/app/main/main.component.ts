@@ -31,8 +31,8 @@ export class MainComponent implements OnInit {
   public barChartLegend = true;
 
   public barChartData: ChartDataSets[] = [
-    { data: [6, 6, 3, 5, 6, 4, 3.5, 5], label: 'Min' },
-    { data: [25, 25, 10, 15, 14, 15, 12, 25], label: 'Max' }
+    { data: [6, 6, 3, 5, 6, 4, 3.5, 5], label: 'Min (cm)' },
+    { data: [25, 25, 10, 15, 14, 15, 12, 25], label: 'Max (cm)' }
   ];
 
 
