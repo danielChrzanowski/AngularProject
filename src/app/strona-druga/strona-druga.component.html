@@ -55,3 +55,11 @@
     </div>
   </div>
 </div>
+
+<hr>
+<div class="obserwator">
+  <h3>Obserwator grzybów:</h3>
+  <div *ngFor="let grzyb of grzyby">
+    {{ grzyb.nazwa }}: {{ grzyb.ilosc }}
+  </div>
+</div>
