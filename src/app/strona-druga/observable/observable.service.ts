@@ -29,7 +29,7 @@ export class ObservableService {
     const grzybyObservable = new Observable(obserwator => {
       setTimeout(() => {
         obserwator.next(this.grzyby);
-      }, 3000);
+      }, 2000);
     });
 
     return grzybyObservable;
