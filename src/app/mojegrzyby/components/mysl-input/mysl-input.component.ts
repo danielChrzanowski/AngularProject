@@ -61,7 +61,7 @@ export class MyslInputComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  onSubmit(files: FileHandle[]) {
     this.submitted = true;
 
     //blad
@@ -71,6 +71,8 @@ export class MyslInputComponent implements OnInit {
 
     //wszystko ok
     this.submitted = false;
+
+
     this.addMysl();
     this.registerForm.patchValue({
       nazwa: '',
@@ -91,12 +93,21 @@ export class MyslInputComponent implements OnInit {
   files: FileHandle[] = [];
 
   filesDropped(files: FileHandle[]): void {
+    let numbers = [100];
+    for (let num of numbers) {
+      var div = document.getElementById("progressBar");
+      div.style.width = num + "%";
+    }
     this.files = files;
   }
 
-  upload(files: FileHandle[]): void {
-    this.files=[];
-
+  deleteFile(files: FileHandle[]): void {
+    let numbers = [0];
+    for (let num of numbers) {
+      var div = document.getElementById("progressBar");
+      div.style.width = num + "%";
+    }
+    this.files = [];
   }
 
 }

@@ -44,12 +44,12 @@
             </div>
           </div>
           
-          <button class="btn btn-primary" type="button" (click)="upload($event)">Skasuj zdjęcie</button>
+          <button class="btn btn-primary" type="button" (click)="deleteFile($event)">Skasuj zdjęcie</button>
 
           <div class="przyciski">
             <div class="form-group">
               <a class="btn btn-primary" href="mojegrzyby" role="button">Cofnij</a>
-              <button class="btn btn-primary" (click)="openModal('custom-modal-1')">Dodaj</button>
+              <button class="btn btn-primary" (click)="openModal('custom-modal-1'); deleteFile($event)">Dodaj</button>
             </div>
           </div>
         </form>
@@ -60,6 +60,11 @@
 
 <jw-modal id="custom-modal-1">
   <h2>Dodano grzyb</h2>
-
+  <p>{{dodane}}</p>
   <button class="btn btn-primary" (click)="closeModal('custom-modal-1');">Zamknij</button>
 </jw-modal>
+
+
+<div class="progress">
+  <div id="progressBar" class="progress-bar progress-bar-striped" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
