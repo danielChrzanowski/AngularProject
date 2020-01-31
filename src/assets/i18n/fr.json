@@ -2,5 +2,13 @@
     "Title": "Champignons polonais",
     "Home": "Accueil ",
     "Moje grzyby": "Mes champignons ",
-    "Informacje": "Information "
+    "Informacje": "Information ",
+    "Pogoda": "Temps ",
+    "oCzym": "À propos de quoi?",
+    "oCzymTekst": "Ceci est une page où vous pouvez trouver des informations sur les champignons trouvés en Pologne",
+    "oCzymTekst2": "Vous pouvez également conserver les champignons que vous avez récoltés",
+    "porownanieKapeluszy": "Comparaison des tailles de chapeaux de champignons polonais:",
+    "mojeGrzyby": "Mes champignons",
+    "dodajGrzyb": "Ajouter des champignons",
+    "usun": "supprimer"
 }

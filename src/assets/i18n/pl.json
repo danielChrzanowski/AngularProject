@@ -2,5 +2,13 @@
     "Title": "Grzyby polskie",
     "Home": "Start ",
     "Moje grzyby": "Moje grzyby ",
-    "Informacje": "Informacje "
+    "Informacje": "Informacje ",
+    "Pogoda": "Pogoda ",
+    "oCzym": "O czym?",
+    "oCzymTekst": "To strona, na której znajdziesz informacje o grzybach występujących w Polsce",
+    "oCzymTekst2": "Możesz też zapisywać zebrane przez Ciebie grzyby",
+    "porownanieKapeluszy": "Porównanie wielkości kapeluszy polskich grzybów:",
+    "mojeGrzyby": "Moje grzyby",
+    "dodajGrzyb": "Dodaj grzyb",
+    "usun": "usuń"
 }

@@ -2,5 +2,13 @@
     "Title": "Polish mushrooms",
     "Home": "Home ",
     "Moje grzyby": "My mushrooms ",
-    "Informacje": "Information "
+    "Informacje": "Information ",
+    "Pogoda": "Weather ",
+    "oCzym": "What is the content?",
+    "oCzymTekst": "This is a website where you can find information about mushrooms found in Poland",
+    "oCzymTekst2": "You can also save mushrooms you have collected",
+    "porownanieKapeluszy": "Comparison of the sizes of Polish mushroom hats:",
+    "mojeGrzyby": "My mushrooms",
+    "dodajGrzyb": "Add mushroom",
+    "usun": "delete"
 }

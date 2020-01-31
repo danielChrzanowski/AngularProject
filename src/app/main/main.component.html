@@ -1,18 +1,17 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">Home</li>
+    <li class="breadcrumb-item active" aria-current="page" translate>Home</li>
   </ol>
 </nav>
 
 <div class="pierwsza">
-  <h3>O czym?</h3>
+  <h3>{{ 'oCzym' | translate }}</h3>
   <img class="grzyb" src="assets/img/grzyb.jpg"><br>
   <br>
-  To strona, na której znajdziesz informacje o grzybach występujących w Polsce<br>
-  Możesz też zapisywać zebrane przez Ciebie grzyby
-
+  {{ 'oCzymTekst' | translate }}<br>
+  {{ 'oCzymTekst2' | translate }}
 <hr>
-  <h3>Porównanie wielkości kapeluszy grzybów:</h3>
+  <h3>{{ 'porownanieKapeluszy' | translate }}</h3>
 
   <div class="wykres" style="display: block">
     <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"

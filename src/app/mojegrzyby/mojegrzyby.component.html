@@ -5,11 +5,11 @@
 </nav>
 
 <div class="box">
-  <h2>Moje grzyby:</h2>
+  <h2>{{ 'mojeGrzyby' | translate }}</h2>
   <div *ngFor="let mysl of serwis.getMysli()">
     <app-mysl-komp [mysl]="mysl"></app-mysl-komp>
   </div>
   <div class="przycisk">
-    <a class="btn btn-primary" href="dodaj-grzyb" role="button">Dodaj grzyb</a>
+    <a class="btn btn-primary" href="dodaj-grzyb" role="button" translate>dodajGrzyb</a>
   </div>
 </div>
