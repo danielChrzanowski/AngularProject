@@ -11,6 +11,8 @@ export class StronaDrugaComponent implements OnInit {
   public weatherSearchForm: FormGroup;
   public weatherData: any;
   blad: string;
+  czyGrzybowac: boolean = false;
+  czyPuste: boolean = true;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,8 +30,16 @@ export class StronaDrugaComponent implements OnInit {
       this.weatherData = data;
       if (this.weatherData.success == false) {
         this.blad = "(Nie ma takiej lokacji w bazie pogody)";
+        
       } else {
+        this.czyPuste = false;
         this.blad = "";
+        this.czyGrzybowac = false;
+        if (this.weatherData.current.temperature > 5) {
+          this.czyGrzybowac = true;
+        } else {
+          this.czyGrzybowac = false;
+        }
         console.log(this.weatherData);
       }
     });

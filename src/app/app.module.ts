@@ -17,6 +17,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ModalModule } from './_modal';
 import { ChartsModule } from 'ng2-charts';
 import { ApixuService } from './strona-druga/apixu.service';
+import { DyrektywaDirective } from './strona-druga/dyrektywa.directive';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -28,7 +29,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     routingComponents,
     MainComponent,
     MyslInputComponent,
-    MyslKompComponent
+    MyslKompComponent,
+    DyrektywaDirective
   ],
   imports: [
     BrowserModule,
