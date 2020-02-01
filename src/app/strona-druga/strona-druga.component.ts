@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApixuService } from './apixu.service';
-import { Grzyb } from './observable/grzyb.model';
+import { Komunikaty } from './observable/komunikaty.model';
 import { ObservableService } from './observable/observable.service';
 
 @Component({
@@ -12,11 +12,10 @@ import { ObservableService } from './observable/observable.service';
 export class StronaDrugaComponent implements OnInit {
   public weatherSearchForm: FormGroup;
   public weatherData: any;
-  blad: string;
-  czyGrzybowac: boolean = false;
+  tak: String;
+  nie: String;
+  brakLokacji: String;
   czyPuste: boolean = true;
-
-  grzyby: Grzyb[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -29,26 +28,36 @@ export class StronaDrugaComponent implements OnInit {
       location: [""]
     });
 
-    const studentsObservable = this.observable.getGrzyby();
-    studentsObservable.subscribe((grzybyDane: Grzyb[]) => {
-      this.grzyby = grzybyDane;
-    });
   }
 
   sendToAPIXU(formValues) {
     this.apixuService.getWeather(formValues.location).subscribe(data => {
+      const studentsObservable = this.observable.getGrzyby();
       this.weatherData = data;
+
       if (this.weatherData.success == false) {
-        this.blad = "(Nie ma takiej lokacji w bazie pogody)";
+        this.czyPuste = false;
+        studentsObservable.subscribe((komunikat: Komunikaty[]) => {
+          this.brakLokacji = komunikat[0].nazwa;
+          this.tak = "";
+          this.nie = "";
+        });
 
       } else {
         this.czyPuste = false;
-        this.blad = "";
-        this.czyGrzybowac = false;
+
         if (this.weatherData.current.temperature > 5) {
-          this.czyGrzybowac = true;
+          studentsObservable.subscribe((komunikat: Komunikaty[]) => {
+            this.tak = komunikat[1].nazwa;
+            this.nie = "";
+            this.brakLokacji = "";
+          });
         } else {
-          this.czyGrzybowac = false;
+          studentsObservable.subscribe((komunikat: Komunikaty[]) => {
+            this.tak = "";
+            this.nie = komunikat[2].nazwa;
+            this.brakLokacji = "";
+          });
         }
         console.log(this.weatherData);
       }
