@@ -8,18 +8,27 @@ describe('MainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainComponent ]
+      declarations: [MainComponent]
     })
-    .compileComponents();
+      .compileComponents();
+    
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //moje testy:
+ // it('contains header h1 with couter initial value', () => {
+  //  expect(this.asdas).toContain(0);
+ // });
+
 });
