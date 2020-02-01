@@ -1,7 +1,7 @@
-import { Grzyb } from './mysl';
+import { Mysl } from './mysl';
 
 describe('Mysl', () => {
   it('should create an instance', () => {
-    expect(new Grzyb()).toBeTruthy();
+    expect(new Mysl()).toBeTruthy();
   });
 });

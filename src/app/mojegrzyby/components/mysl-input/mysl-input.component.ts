@@ -78,6 +78,8 @@ export class MyslInputComponent implements OnInit {
       nazwa: '',
       ilosc: ''
     });
+    var div = document.getElementById("progressBar");
+    div.style.width = "0%";
 
   }
 
