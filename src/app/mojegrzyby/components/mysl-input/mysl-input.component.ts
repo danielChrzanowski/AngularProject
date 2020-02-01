@@ -61,8 +61,9 @@ export class MyslInputComponent implements OnInit {
     }
   }
 
-  onSubmit(files: FileHandle[]) {
+  onSubmit() {
     this.submitted = true;
+    this.files = [];
 
     //blad
     if (this.registerForm.invalid) {
@@ -71,7 +72,6 @@ export class MyslInputComponent implements OnInit {
 
     //wszystko ok
     this.submitted = false;
-
 
     this.addMysl();
     this.registerForm.patchValue({
@@ -93,12 +93,33 @@ export class MyslInputComponent implements OnInit {
   files: FileHandle[] = [];
 
   filesDropped(files: FileHandle[]): void {
-    let numbers = [100];
-    for (let num of numbers) {
+    (<HTMLInputElement> document.getElementById("myBtn")).disabled = true;
+    (<HTMLInputElement> document.getElementById("myBtn2")).disabled = true;
+    let numbers = [30, 50, 75, 100];
+    var div = document.getElementById("progressBar");
+    div.style.width = numbers[0] + "%";
+
+    setTimeout(() => {
       var div = document.getElementById("progressBar");
-      div.style.width = num + "%";
-    }
-    this.files = files;
+      div.style.width = numbers[1] + "%";
+
+      setTimeout(() => {
+        var div = document.getElementById("progressBar");
+        div.style.width = numbers[2] + "%";
+
+        setTimeout(() => {
+          var div = document.getElementById("progressBar");
+          div.style.width = numbers[3] + "%";
+
+          (<HTMLInputElement> document.getElementById("myBtn")).disabled = false;
+          (<HTMLInputElement> document.getElementById("myBtn2")).disabled = false;
+          this.files = files;
+        }, 1000);
+
+      }, 1000);
+
+    }, 1000);
+
   }
 
   deleteFile(files: FileHandle[]): void {
