@@ -1,11 +1,11 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">Informacje</li>
+    <li class="breadcrumb-item active" aria-current="page">{{'Informacje' | translate}}</li>
   </ol>
 </nav>
 
 
-<h3>Informacje na temat grzybów w Polsce:</h3>
+<h3>{{'infoOGrzybach' | translate}}</h3>
 
 <div class="mat-elevation-z8 data-table">
   <mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
@@ -16,17 +16,17 @@
     </ng-container>
 
     <ng-container matColumnDef="nazwa">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Nazwa</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{'nazwa' | translate}}</mat-header-cell>
       <mat-cell *matCellDef="let row">{{row.nazwa}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="kapelusz">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Kapelusz (cm)</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{'kapelusz' | translate}} (cm)</mat-header-cell>
       <mat-cell *matCellDef="let row">{{row.kapelusz}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="wielkosc">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Wysokość (cm)</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>{{'wysokosc' | translate}} (cm)</mat-header-cell>
       <mat-cell *matCellDef="let row">{{row.wielkosc}}</mat-cell>
     </ng-container>
 

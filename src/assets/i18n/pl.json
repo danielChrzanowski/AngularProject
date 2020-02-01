@@ -10,5 +10,18 @@
     "porownanieKapeluszy": "Porównanie wielkości kapeluszy polskich grzybów:",
     "mojeGrzyby": "Moje grzyby",
     "dodajGrzyb": "Dodaj grzyb",
-    "usun": "usuń"
+    "usun": "usuń",
+    "infoOGrzybach": "Informacje na temat grzybów w Polsce:",
+    "wyszukajLokacje": "Wyszukaj lokację:",
+    "wpiszMiasto": "Wpisz nazwę maista lub kraju",
+    "szukajButton": "Szukaj",
+    "miasto": "Miasto: ",
+    "temperatura": "Temperatura: ",
+    "wilgotnosc": "Wilgotność: ",
+    "zachmurzenie": "Zachmurzenie: ",
+    "wiatr": "Prędkość wiatru: ",
+    "widocznosc": "Widoczność: ",
+    "nazwa": "Nazwa",
+    "kapelusz": "Kapelusz",
+    "wysokosc": "Wysokość"
 }

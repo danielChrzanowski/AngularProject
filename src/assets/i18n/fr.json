@@ -10,5 +10,17 @@
     "porownanieKapeluszy": "Comparaison des tailles de chapeaux de champignons polonais:",
     "mojeGrzyby": "Mes champignons",
     "dodajGrzyb": "Ajouter des champignons",
-    "usun": "supprimer"
+    "usun": "supprimer",
+    "infoOGrzybach": "Informations sur les champignons en Pologne:",
+    "wyszukajLokacje": "Lieu de recherche:",
+    "szukajButton": "Rechercher",
+    "miasto": "Ville: ",
+    "temperatura": "Température: ",
+    "wilgotnosc": "Humidité: ",
+    "zachmurzenie": "Nuageux: ",
+    "wiatr": "Vitesse du vent: ",
+    "widocznosc": "Visibilité: ",
+    "nazwa": "Le nom",
+    "kapelusz": "La massue",
+    "wysokosc": "Hauteur"
 }

@@ -10,5 +10,17 @@
     "porownanieKapeluszy": "Comparison of the sizes of Polish mushroom hats:",
     "mojeGrzyby": "My mushrooms",
     "dodajGrzyb": "Add mushroom",
-    "usun": "delete"
+    "usun": "delete",
+    "infoOGrzybach": "Information on mushrooms in Poland:",
+    "wyszukajLokacje": "Search location:",
+    "szukajButton": "Search",
+    "miasto": "Town: ",
+    "temperatura": "Temperature: ",
+    "wilgotnosc": "Humidity: ",
+    "zachmurzenie": "Cloudcover: ",
+    "wiatr": "Wind speed: ",
+    "widocznosc": "Visibility: ",
+    "nazwa": "Name",
+    "kapelusz": "Hat",
+    "wysokosc": "Height"
 }
