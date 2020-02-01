@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appDyrektywa]'
@@ -6,6 +6,8 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 export class DyrektywaDirective {
 
   constructor(private el: ElementRef) { }
+
+  @Input('appDyrektywa') highlightColor: string;
 
   @HostListener('mouseenter') onMouseEnter() {
     this.highlight('rgb(66,139,202)');
