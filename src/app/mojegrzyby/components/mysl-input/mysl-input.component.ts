@@ -3,6 +3,7 @@ import { SerwisService } from 'src/app//mojegrzyby/services/serwis.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ModalService } from 'src/app/_modal';
 import { FileHandle } from './dragDrop.directive';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mysl-input',
@@ -17,7 +18,7 @@ export class MyslInputComponent implements OnInit {
   bodyText: string;
   tempNazwa: string;
 
-  constructor(private serwis: SerwisService, private formBuilder: FormBuilder, private modalService: ModalService) {
+  constructor(private serwis: SerwisService, private formBuilder: FormBuilder, private modalService: ModalService, private router: Router) {
     this.myslTekst = '';
   }
 
@@ -60,6 +61,10 @@ export class MyslInputComponent implements OnInit {
       event.preventDefault();
     }
   }
+
+wroc(){
+  this.router.navigate(["/mojegrzyby"]);
+}
 
   onSubmit() {
     this.submitted = true;
