@@ -11,7 +11,7 @@ describe('MainComponent', () => {
       declarations: [MainComponent]
     })
       .compileComponents();
-    
+
   }));
 
   beforeEach(() => {
@@ -25,10 +25,5 @@ describe('MainComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  //moje testy:
- // it('contains header h1 with couter initial value', () => {
-  //  expect(this.asdas).toContain(0);
- // });
 
 });
