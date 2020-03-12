@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href='mojegrzyby'>{{ 'mojeGrzyby' | translate }}</a></li>
+    <li class="breadcrumb-item"><a (click)="wroc()">{{ 'mojeGrzyby' | translate }}</a></li>
     <li class="breadcrumb-item active" aria-current="page">Dodaj Grzyb</li>
   </ol>
 </nav>
@@ -47,7 +47,7 @@
 
           <div class="przyciski">
             <div class="form-group">
-              <a class="btn btn-primary" href="mojegrzyby" role="button">Cofnij</a>
+              <a class="btn btn-primary" (click)="wroc()">Cofnij</a>
               <button id="myBtn" class="btn btn-primary" (click)="openModal('custom-modal-1')">Dodaj</button>
             </div>
           </div>
