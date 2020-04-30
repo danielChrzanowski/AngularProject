@@ -27,7 +27,7 @@
     "angular-paginator": "^3.0.0",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "mat-table-filter": "^1.2.5",
     "ng2-charts": "^2.3.0",
     "rxjs": "~6.4.0",
